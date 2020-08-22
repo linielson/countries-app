@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://restcountries.eu/rest/v2/all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.3.0 x86_64) ruby/2.6.5p114
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - restcountries.eu
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Date:
+      - Sat, 22 Aug 2020 12:54:37 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d05cf32dc7b5d798e46f4fa783a92d4be1598100876; expires=Mon, 21-Sep-20
+        12:54:36 GMT; path=/; domain=.restcountries.eu; HttpOnly; SameSite=Lax
+      - __cfduid=d7b91e260dc736cf7dd77e13a585b0c6b1598100877; expires=Mon, 21-Sep-20
+        12:54:37 GMT; path=/; domain=.restcountries.eu; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - Accept, X-Requested-With
+      Cache-Control:
+      - public, max-age=86400
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 04b7d5468c0000f617058fa200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5c6cbe50ec9bf617-GRU
+    body:
+      encoding: UTF-8
+      string: '[]'
+  recorded_at: Sat, 22 Aug 2020 12:54:37 GMT
+recorded_with: VCR 6.0.0

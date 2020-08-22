@@ -11,22 +11,13 @@ class Country < ApplicationRecord
   validates :flag,
             presence: true
 
-  validates :regional_blocs,
-            presence: true
-
   validates :population,
             presence: true,
-            numericality: { greater_than: 0 }
+            numericality: { greater_than_or_equal_to: 0 }
 
   validates :timezones,
             presence: true
 
   validates :languages,
-            presence: true
-
-  validates :capital,
-            presence: true
-
-  validates :borders,
             presence: true
 end
