@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
-  # These are extensions that must be enabled in order to support this database
+ActiveRecord::Schema.define(version: 2020_08_22_003152) do
   enable_extension 'plpgsql'
+
+  create_table 'countries', force: :cascade do |t|
+    t.string 'name', null: false
+    t.jsonb 'currencies', null: false
+    t.string 'acronym', null: false
+    t.string 'flag', null: false
+    t.jsonb 'regional_blocs', null: false
+    t.integer 'population', null: false
+    t.jsonb 'timezones', null: false
+    t.jsonb 'languages', null: false
+    t.string 'capital', null: false
+    t.jsonb 'borders', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+  end
 end
