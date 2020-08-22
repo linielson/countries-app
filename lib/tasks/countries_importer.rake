@@ -1,7 +1,9 @@
 namespace :countries_app do
-  desc 'Imports countries information from https://restcountries.eu/'
+  desc 'Imports countries information'
 
   task import_countries: :environment do
-    puts "Test...#{Time.now}"
+    puts 'Start importation'
+    ImportCountriesFromRestcountries.new.call
+    puts 'Finish importation'
   end
 end
