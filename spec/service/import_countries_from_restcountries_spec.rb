@@ -11,19 +11,11 @@ RSpec.describe ImportCountriesFromRestcountries do
 
     context 'when the country already exist' do
       let!(:existing_country) do
-        country = Country.new
-        country.name = 'Afghanistan'
-        country.population = 11_111_111
-        country.currencies = [{ 'code' => 'Some code', 'name' => 'Some name', 'symbol' => 'x' }]
-        country.acronym = 'AFG'
-        country.flag = 'https://restcountries.eu/data/afg.svg'
-        country.regional_blocs = [{ 'acronym' => 'SAARC' }]
-        country.timezones = ['UTC+04:30']
-        country.languages = [{ 'name' => 'Turkmen', 'nativeName' => 'Türkmen' }]
-        country.capital = 'Kabul'
-        country.borders = %w[IRN PAK TKM UZB TJK CHN]
-        country.save!
-        country
+        Country.create!(name: 'Afghanistan', population: 11_111_111, acronym: 'AFG', timezones: ['UTC+04:30'],
+                        currencies: [{ 'code' => 'Some code', 'name' => 'Some name', 'symbol' => 'x' }],
+                        flag: 'https://restcountries.eu/data/afg.svg', regional_blocs: [{ 'acronym' => 'SAARC' }],
+                        languages: [{ 'name' => 'Turkmen', 'nativeName' => 'Türkmen' }], capital: 'Kabul',
+                        borders: %w[IRN PAK TKM UZB TJK CHN])
       end
 
       let(:call) do
