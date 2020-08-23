@@ -48,7 +48,7 @@ class Item extends React.Component {
               className='btn btn-default'
               onClick={() => this.setModalShow(true)}
             >
-              <span><FontAwesomeIcon icon={faEye} /></span>
+              <span title='Mais informações'><FontAwesomeIcon icon={faEye} /></span>
             </button>
           </td>
         </tr>
