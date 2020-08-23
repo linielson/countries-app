@@ -5,6 +5,7 @@ import List from './List'
 import Item from './Item'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import GithubCorner from 'react-github-corner';
 
 
 class App extends React.Component {
@@ -77,6 +78,8 @@ class App extends React.Component {
             <Item key={country.id} item={country} />
           ))}
         </List>
+
+        <GithubCorner href='https://github.com/linielson/countries-app' />
       </>
     )
   }
