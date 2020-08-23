@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { isEmpty } from 'lodash'
 import ModalCountry from '../ModalCountry'
 
 class Country extends React.Component {
@@ -19,6 +20,10 @@ class Country extends React.Component {
 
   render() {
     const { item } = this.props
+
+    if (isEmpty(item)) {
+      return null
+    }
 
     return (
       <>
