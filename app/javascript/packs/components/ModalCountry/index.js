@@ -20,7 +20,7 @@ function ModalCountry(props) {
           <tbody>
             <tr>
               <th scope="row">População</th>
-              <td>{ props.country.population }</td>
+              <td>{ props.country.population.toLocaleString('pt-BR') }</td>
             </tr>
             <tr>
               <th scope="row">Timezone</th>
@@ -39,7 +39,7 @@ function ModalCountry(props) {
               </td>
             </tr>
             <tr>
-              <th scope="row">Línguas</th>
+              <th scope="row">Idiomas</th>
               <td>
                 { props.country.languages.map(language => (
                   <div key={language.name}>{ language.name }</div>

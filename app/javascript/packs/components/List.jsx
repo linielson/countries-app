@@ -9,7 +9,7 @@ class List extends React.Component {
     return (
       <>
         <div className='table-responsive'>
-          <table className='table'>
+          <table className='table table-hover'>
             <thead>
               <tr>
                 <th scope='col'>Bandeira</th>

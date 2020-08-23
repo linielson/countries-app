@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Item.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 import ModalCountry from './ModalCountry'
 
 class Item extends React.Component {
@@ -48,7 +48,7 @@ class Item extends React.Component {
               className='btn btn-default'
               onClick={() => this.setModalShow(true)}
             >
-              <span><FontAwesomeIcon icon={faSearch} /></span>
+              <span><FontAwesomeIcon icon={faEye} /></span>
             </button>
           </td>
         </tr>
