@@ -1,6 +1,6 @@
 import React from 'react'
 
-class List extends React.Component {
+class ListOfCountries extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -27,4 +27,4 @@ class List extends React.Component {
     )
   }
 }
-export default List
+export default ListOfCountries

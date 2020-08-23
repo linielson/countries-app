@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
-import List from './List'
+import ListOfCountries from './ListOfCountries'
 import Country from './Country'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -72,11 +72,11 @@ class App extends React.Component {
           </div>
         </div>
 
-        <List>
+        <ListOfCountries>
           {this.state.countries.map(country => (
             <Country key={country.id} item={country} />
           ))}
-        </List>
+        </ListOfCountries>
 
         <GithubCorner href='https://github.com/linielson/countries-app' />
       </>
