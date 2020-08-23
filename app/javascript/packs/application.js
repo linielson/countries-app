@@ -14,6 +14,6 @@ require('@rails/activestorage').start()
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-require("./components/App")
+require('./components/index')
 require('bootstrap')
 import 'bootstrap/dist/css/bootstrap'

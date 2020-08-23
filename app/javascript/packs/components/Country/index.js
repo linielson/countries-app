@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './Item.css'
+import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
-import ModalCountry from './ModalCountry'
+import ModalCountry from '../ModalCountry'
 
-class Item extends React.Component {
+class Country extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -63,8 +63,8 @@ class Item extends React.Component {
   }
 }
 
-export default Item
+export default Country
 
-Item.propTypes = {
+Country.propTypes = {
   item: PropTypes.object.isRequired,
 }

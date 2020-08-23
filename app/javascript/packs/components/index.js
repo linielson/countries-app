@@ -2,11 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 import List from './List'
-import Item from './Item'
+import Country from './Country'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import GithubCorner from 'react-github-corner';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -75,7 +74,7 @@ class App extends React.Component {
 
         <List>
           {this.state.countries.map(country => (
-            <Item key={country.id} item={country} />
+            <Country key={country.id} item={country} />
           ))}
         </List>
 
