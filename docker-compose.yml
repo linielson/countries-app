@@ -10,5 +10,13 @@ services:
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
 
+  redis:
+    image: redis:5
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis5_data:/var/lib/postgresql/data
+
 volumes:
   pg12_data:
+  redis5_data:
