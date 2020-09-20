@@ -9,7 +9,14 @@ RSpec.describe 'Api::CountriesController', type: :request do
                     borders: %w[IRN PAK TKM UZB TJK CHN])
   end
 
-  before { country }
+  let(:import_countries_from_rest_countries_double) { instance_double(ImportCountriesFromRestcountries) }
+
+  before do
+    country
+
+    allow(ImportCountriesFromRestcountries).to receive(:new).and_return(import_countries_from_rest_countries_double)
+    allow(import_countries_from_rest_countries_double).to receive(:call)
+  end
 
   describe '#index' do
     it 'renders the index template' do
@@ -102,6 +109,40 @@ RSpec.describe 'Api::CountriesController', type: :request do
 
           expect(response).to be_successful
           expect(response.body).not_to include('Angola')
+        end
+      end
+    end
+
+    context 'about importation' do
+      before { travel_to Time.now }
+      after { travel_back }
+
+      context 'when "updated_after" is empty' do
+        it 'imports countries' do
+          REDIS.set('updated_after', '')
+
+          expect(ImportCountriesFromRestcountries).to receive(:new).once
+          expect(import_countries_from_rest_countries_double).to receive(:call).once
+          get '/api/countries'
+        end
+      end
+
+      context 'when the "updated_after" is not expired' do
+        it 'does not import countries' do
+          REDIS.set('updated_after', Time.now)
+
+          expect(ImportCountriesFromRestcountries).not_to receive(:new)
+          get '/api/countries'
+        end
+      end
+
+      context 'when the "updated_after" is expired' do
+        it 'imports countries' do
+          REDIS.set('updated_after', Time.now - 3.minutes)
+
+          expect(ImportCountriesFromRestcountries).to receive(:new).once
+          expect(import_countries_from_rest_countries_double).to receive(:call).once
+          get '/api/countries'
         end
       end
     end

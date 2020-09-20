@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
+gem 'mock_redis', '~> 0.26.0'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'rails-controller-testing'
 gem 'redis', '~> 4.2.2'
