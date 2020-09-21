@@ -138,7 +138,7 @@ RSpec.describe 'Api::CountriesController', type: :request do
 
       context 'when the "updated_after" is expired' do
         it 'imports countries' do
-          REDIS.set('updated_after', Time.now - 3.minutes)
+          REDIS.set('updated_after', Time.now - 31.minutes)
 
           expect(ImportCountriesFromRestcountries).to receive(:new).once
           expect(import_countries_from_rest_countries_double).to receive(:call).once

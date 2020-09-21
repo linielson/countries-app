@@ -30,6 +30,6 @@ class Api::CountriesController < ApplicationController
   end
 
   def can_import?(last_importation)
-    Time.now > (last_importation.to_datetime + 2.minutes)
+    Time.now > (last_importation.to_datetime + 30.minutes)
   end
 end
