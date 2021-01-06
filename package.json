@@ -14,7 +14,7 @@
     "@rails/webpacker": "4.3.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.5.2",
     "fetch-mock": "^9.10.7",
